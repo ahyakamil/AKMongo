@@ -19,7 +19,7 @@ in service 2 you have:
     }
     
     
-you want have result:
+you want have result in mongo database:
 
     {
     id: "a001",
