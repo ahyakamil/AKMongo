@@ -1,6 +1,33 @@
 # AKMongo
-Spring Boot helper for upsert and upsert all
+Spring Boot helper for upsert and upsert all.
+Sometimes you don't want to remove existing object, ex:
 
+in service 1 you have:
+
+    {
+    id: "a001",
+    accountId: "s001",
+    lastCheckActivityLogin: "29 Jan 2020, 18:00"    
+    }
+    
+in service 2 you have:
+
+    {
+    id: "a001",
+    accountId: "s001",
+    lastCheckActivityShop: "31 Jan 2020, 17:00"    
+    }
+    
+    
+you want have result:
+
+    {
+    id: "a001",
+    accountId: "s001",
+    lastCheckActivityLogin: "29 Jan 2020, 18:00"    
+    lastCheckActivityShop: "31 Jan 2020, 17:00"    
+    }
+    
 
 ## How To Use
 Simple, 
