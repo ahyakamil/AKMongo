@@ -62,6 +62,6 @@ Simple,
       @Override
       public void niceThingTodo() {
         ....
-        akMongo.upsertAll(bankDataAccountsToUpdate);
+        akMongo.upsertAll(datasToUpdate);
       }
     }
