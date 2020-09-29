@@ -2,16 +2,37 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <name>AKMongo</name>
+    <description>Spring boot mongo helper for upsert and upsert all</description>
+    <url>https://github.com/ahyakamil/AKMongo</url>
+
     <groupId>com.ahyakamil</groupId>
     <artifactId>akmongo</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
+
+    <developers>
+        <developer>
+            <id>ahyakamil</id>
+            <name>Ahya Aulanas Alkamil</name>
+            <email>ahyakamil@gmail.com</email>
+            <timezone>+7</timezone>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <scm>
         <connection>scm:git:git://github.com/ahyakamil/AKMongo.git</connection>
         <developerConnection>scm:git:git@github.com:ahyakamil/ahyakamil.git</developerConnection>
         <url>https://github.com/ahyakamil/AKMongo</url>
       <tag>HEAD</tag>
-  </scm>
+    </scm>
 
     <distributionManagement>
         <snapshotRepository>
@@ -30,6 +51,11 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-mongodb</artifactId>
             <version>3.0.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
         </dependency>
     </dependencies>
 
