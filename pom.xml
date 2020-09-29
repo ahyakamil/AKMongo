@@ -31,7 +31,6 @@
         <connection>scm:git:git://github.com/ahyakamil/AKMongo.git</connection>
         <developerConnection>scm:git:git@github.com:ahyakamil/ahyakamil.git</developerConnection>
         <url>https://github.com/ahyakamil/AKMongo</url>
-        <tag>akmongo-1.0.0</tag>
     </scm>
 
     <distributionManagement>
@@ -130,14 +129,11 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <Build-By>ahyakamil</Build-By>
-                            <Class-Path>.</Class-Path>
-                        </manifestEntries>
-                    </archive>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
