@@ -34,13 +34,11 @@ Simple,
 
 ### 1. just add the dependecy:
 
-    ```
     <dependency>
         <groupId>com.ahyakamil</groupId>
         <artifactId>akmongo</artifactId>
         <version>1.0.1</version>
     </dependency>
-    ```
 
 ### 2. create the bean:
 
