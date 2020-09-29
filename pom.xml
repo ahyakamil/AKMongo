@@ -8,7 +8,7 @@
 
     <groupId>com.ahyakamil</groupId>
     <artifactId>akmongo</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <developers>
         <developer>
@@ -31,7 +31,7 @@
         <connection>scm:git:git://github.com/ahyakamil/AKMongo.git</connection>
         <developerConnection>scm:git:git@github.com:ahyakamil/ahyakamil.git</developerConnection>
         <url>https://github.com/ahyakamil/AKMongo</url>
-        <tag>akmongo-1.0.0</tag>
+        <tag>v1.0.1</tag>
     </scm>
 
     <distributionManagement>
