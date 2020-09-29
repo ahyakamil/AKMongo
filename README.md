@@ -32,7 +32,7 @@ you want have result in mongo database:
 ## How To Use
 Simple, 
 
-1. just add the dependecy:
+### 1. just add the dependecy:
 
     ```
     <dependency>
@@ -42,9 +42,9 @@ Simple,
     </dependency>
     ```
 
-2. create the bean:
+### 2. create the bean:
 
-### Example
+#### Example
     @SpringBootApplication
     public class NiceApplication {
       public static void main(String[] args) {
@@ -58,9 +58,9 @@ Simple,
     }
 
 
-3. use it in service:
+### 3. use it in service:
 
-### Example
+#### Example
 
     @Service
     public class NiceServiceImpl implements NiceService {
