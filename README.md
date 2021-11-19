@@ -40,19 +40,15 @@ Simple,
         <version>1.0.1</version>
     </dependency>
 
-### 2. create the bean:
+### 2. add this to main:
 
 #### Example
     @SpringBootApplication
+    @EnableMongoRepositories(
+            repositoryBaseClass = AKMongoImpl.class
+    )    
     public class NiceApplication {
-      public static void main(String[] args) {
-          SpringApplication.run(NiceApplication.class, args);
-      }
-
-      @Bean
-      public AKMongo akMongo(MongoOperations mongoOperations) {
-          return new AKMongoImpl(mongoOperations);
-      }
+        ....
     }
 
 
