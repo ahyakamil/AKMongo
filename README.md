@@ -28,12 +28,26 @@ you want have result in mongo database:
 
 ## How To Use
 ### 1. just add the dependecy:
+    <distributionManagement>
+        .....
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
-    <dependency>
-        <groupId>com.ahyakamil</groupId>
-        <artifactId>akmongo</artifactId>
-        <version>1.0.2.rc0-SNAPSHOT</version>
-    </dependency>
+    <dependecies>
+        .....    
+        <dependency>
+            <groupId>com.ahyakamil</groupId>
+            <artifactId>akmongo</artifactId>
+            <version>1.0.2.rc0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 ### 2. add this to main:
     @SpringBootApplication
