@@ -37,7 +37,7 @@ Simple,
     <dependency>
         <groupId>com.ahyakamil</groupId>
         <artifactId>akmongo</artifactId>
-        <version>1.0.1</version>
+        <version>1.0.2.rc0-SNAPSHOT</version>
     </dependency>
 
 ### 2. add this to main:
