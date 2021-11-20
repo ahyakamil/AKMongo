@@ -66,7 +66,7 @@ You need to extend AKMongo on your repository
     public interface NiceThingRepository extends AKMongo<NiceThing, String> {
     }
     
-    public interface NiceThingServiceImpl {
+    public interface NiceThingService {
         void upsert(NiceThing niceThing);
         void usertAll(List<NiceThing> niceThings);
     }
