@@ -59,7 +59,7 @@ you want have result in mongo database:
     }
 
 
-### 3. use it in service:
+### 3. use it in a repository:
 You need to extend AKMongo on your repository
 
     @Repository
