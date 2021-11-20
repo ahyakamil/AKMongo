@@ -1,20 +1,18 @@
 # AKMongo
 Spring Boot helper for upsert and upsert all.
-Sometimes you don't want to remove existing object, ex:
+Sometimes you don't want to remove another existing object.
 
-in service 1 you have:
+for example, in mongodb you have data:
 
     {
-    id: "a001",
-    accountId: "s001",
+    _id: "a001",
     lastCheckActivityLogin: "29 Jan 2020, 18:00"    
     }
     
-in service 2 you have:
+and on your spring boot entity you have:
 
     {
-    id: "a001",
-    accountId: "s001",
+    _id: "a001",
     lastCheckActivityShop: "31 Jan 2020, 17:00"    
     }
     
@@ -22,16 +20,13 @@ in service 2 you have:
 you want have result in mongo database:
 
     {
-    id: "a001",
-    accountId: "s001",
+    _id: "a001",
     lastCheckActivityLogin: "29 Jan 2020, 18:00"    
     lastCheckActivityShop: "31 Jan 2020, 17:00"    
     }
     
 
 ## How To Use
-Simple, 
-
 ### 1. just add the dependecy:
 
     <dependency>
@@ -41,8 +36,6 @@ Simple,
     </dependency>
 
 ### 2. add this to main:
-
-#### Example
     @SpringBootApplication
     @EnableMongoRepositories(
             repositoryBaseClass = AKMongoImpl.class
@@ -53,19 +46,43 @@ Simple,
 
 
 ### 3. use it in service:
+You need to extend AKMongo on your repository
 
-#### Example
-
-    @Service
-    public class NiceServiceImpl implements NiceService {
-      ......
-
-      @Autowired
-      AKMongo akMongo;
-
-      @Override
-      public void niceThingTodo() {
-        ....
-        akMongo.upsertAll(datasToUpdate);
-      }
+    @Repository
+    public interface NiceThingRepository extends AKMongo<NiceThing, String> {
     }
+    
+    public interface NiceThingServiceImpl {
+        void upsert(NiceThing niceThing);
+        void usertAll(List<NiceThing> niceThings);
+    }
+    
+    @Service
+    public interface NiceThingServiceImpl implement NiceThingService {
+        @Autowired
+        NiceThingRepository niceThingRepository;
+        
+        @Override
+        public void upsert(NiceThingDto niceThingDto) {
+            //map dto to entity, and do other nice thing
+            ....
+            niceThingRepository.akUpsert(niceThing);
+        }
+        
+        @Override
+        public void upsertAll(List<NiceThingDto> niceThingDtos) {
+            //map list dto to list entity, and do other nice thing
+            ....
+            niceThingRepository.akUpsertAll(niceThings);
+        }
+    }
+    
+You still can use another spring boot method like save, delete, etc as usual.
+
+## License
+Licensed under [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.html)
+
+## Buy Me A Chocolate
+[Buy Me A Chocolate](https://www.paypal.com/paypalme/ahyaalkamil1)
+
+
